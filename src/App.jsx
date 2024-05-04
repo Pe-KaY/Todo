@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./App.css"
+import cyclist from "src/assets/cyclist.gif"
 
 function App() {
   const [todo, setTodo] = useState([])
@@ -32,7 +33,7 @@ function App() {
       <div className="container">
         <div className="animcontain">
           <div className="anim">
-            <img src="src/assets/cyclist.gif" />
+            <img src={cyclist} />
             <p>Designed by Paa Kwesi Ephraim</p>
           </div>
         </div>
