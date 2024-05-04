@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./App.css"
 
 function App() {
-  const [todo, setTodo] = useState(["gym", "extraoo"])
+  const [todo, setTodo] = useState([])
 
   const [todoinput, setTodoinput] = useState("")
 
