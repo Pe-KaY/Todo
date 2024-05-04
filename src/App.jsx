@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./App.css"
-import cyclist from "src/assets/cyclist.gif"
+import cyclist from "./assets/cyclist.gif"
 
 function App() {
   const [todo, setTodo] = useState([])
