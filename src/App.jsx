@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./App.css"
 import cyclist from "./assets/cyclist.gif"
 
@@ -12,7 +12,7 @@ function App() {
   }
 
   function addTodo() {
-    if (todoinput === "") {
+    if (todoinput.trim() === "") {
       return
     }
     setTodo((td) => [...td, todoinput])
@@ -27,6 +27,23 @@ function App() {
       setTodo(updatedTodo)
     }, 300)
   }
+
+  useEffect(() => {
+    const addam = document.getElementById("addam")
+    const input = document.querySelector('input[type="text"]')
+
+    const handleEnterKey = (e) => {
+      if (e.key === "Enter") {
+        addam.click()
+      }
+    }
+
+    input.addEventListener("keydown", handleEnterKey)
+
+    return () => {
+      input.removeEventListener("keydown", handleEnterKey)
+    }
+  }, [])
 
   return (
     <>
@@ -47,7 +64,7 @@ function App() {
               placeholder="Enter Todo"
               maxLength={20}
             />
-            <button type="button" onClick={addTodo}>
+            <button id="addam" type="button" onClick={addTodo}>
               Add todo
             </button>
           </div>
